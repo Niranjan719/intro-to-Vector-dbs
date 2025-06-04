@@ -16,8 +16,8 @@ load_dotenv()
 if __name__ == "__main__":
     print(" Retrieving...")
 
-    embeddings = OpenAIEmbeddings(model='text-embedding-ada-002')
-    llm = ChatOpenAI(model='gpt-4o-mini', temperature = 0)
+    embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
+    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
     query = "what is Pinecone in machine learning?"
 

@@ -30,11 +30,13 @@ if __name__ == "__main__":
 
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
     combine_docs_chain = create_stuff_documents_chain(
-        OpenAI(model='gpt-4o-mini'), retrieval_qa_chat_prompt
+        OpenAI(model="gpt-4o-mini"), retrieval_qa_chat_prompt
     )
     retrieval_chain = create_retrieval_chain(
         new_vectorstore.as_retriever(), combine_docs_chain
     )
 
-    res = retrieval_chain.invoke({"input": "Give me the gist of FAISS in 3 sentences ?"})
+    res = retrieval_chain.invoke(
+        {"input": "Give me the gist of FAISS in 3 sentences ?"}
+    )
     print(res["answer"])
